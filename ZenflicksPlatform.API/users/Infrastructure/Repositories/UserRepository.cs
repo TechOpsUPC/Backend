@@ -19,6 +19,6 @@ public class UserRepository : BaseRepository<User>, IUserRepository
 
     public async Task<User?> FindByUsernameAndPasswordAsync(string username, string password)
     {
-       return await Context.Set<User>().FirstOrDefaultAsync(u => u.userName == username && u.password == password);
+       return await Context.Set<User>().FirstOrDefaultAsync(u => u.UserName == username && u.Password == password);
     }
 }
