@@ -12,7 +12,7 @@ public class UserRepository : BaseRepository<User>, IUserRepository
     {
     }
 
-    public new async Task<User?> FindByIdAsync(int id)
+    public async Task<User?> FindByIdAsync(int id)
     {
         return await Context.Set<User>().FirstOrDefaultAsync(u => u.Id == id);
     }

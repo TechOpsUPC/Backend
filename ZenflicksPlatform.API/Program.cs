@@ -3,6 +3,11 @@ using zenflicks_backend.shared.domain.repositories;
 using zenflicks_backend.shared.infrastructure.interfaces.ASP.configuration;
 using zenflicks_backend.shared.infrastructure.persistence.EFC.configuration;
 using zenflicks_backend.shared.infrastructure.persistence.EFC.repositories;
+using zenflicks_backend.users.Application.Internal.CommandServices;
+using zenflicks_backend.users.Application.Internal.QueryServices;
+using zenflicks_backend.users.Domain.Repositories;
+using zenflicks_backend.users.Domain.Services;
+using zenflicks_backend.users.Infrastructure.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -50,7 +55,9 @@ builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 
 // Bounded Context Injection Configuration (one for each bounded context)
 //Example:
-//builder.Services.AddScoped<IUserRepository, UserRepository>();
+builder.Services.AddScoped<IUserRepository, UserRepository>();
+builder.Services.AddScoped<IUserCommandService, UserCommandService>();
+builder.Services.AddScoped<IUserQueryService, UserQueryService>();
 
 
 var app = builder.Build();
