@@ -17,7 +17,6 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="users\Infrastructure\" />
       <Folder Include="users\Interfaces\" />
     </ItemGroup>
 

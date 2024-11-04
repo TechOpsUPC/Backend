@@ -5,7 +5,7 @@ namespace zenflicks_backend.users.Domain.Repositories;
 
 public interface IUserRepository : IBaseRepository<User>
 {
-    Task<User?> FindByIdAsync(string id);
+    Task<User?> FindByIdAsync(int id);
     
     Task<User?> FindByUsernameAndPasswordAsync(string username, string password);
 }
