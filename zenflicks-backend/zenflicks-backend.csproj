@@ -17,7 +17,6 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="shared\domain\repositories\" />
       <Folder Include="shared\infrastructure\persistence\EFC\configuration\extensions\" />
       <Folder Include="shared\infrastructure\persistence\EFC\repositories\" />
     </ItemGroup>
