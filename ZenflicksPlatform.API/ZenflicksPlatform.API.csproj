@@ -17,8 +17,6 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="users\Application\Internal\CommandServices\" />
-      <Folder Include="users\Application\Internal\QueryServices\" />
       <Folder Include="users\Infrastructure\" />
       <Folder Include="users\Interfaces\" />
     </ItemGroup>
