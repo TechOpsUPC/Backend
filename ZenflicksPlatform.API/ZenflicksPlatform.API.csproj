@@ -16,4 +16,14 @@
         <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0"/>
     </ItemGroup>
 
+    <ItemGroup>
+      <Folder Include="users\Application\Internal\CommandServices\" />
+      <Folder Include="users\Application\Internal\QueryServices\" />
+      <Folder Include="users\Domain\Model\Queries\" />
+      <Folder Include="users\Domain\Repositories\" />
+      <Folder Include="users\Domain\Services\" />
+      <Folder Include="users\Infrastructure\" />
+      <Folder Include="users\Interfaces\" />
+    </ItemGroup>
+
 </Project>
