@@ -18,9 +18,8 @@
 
     <ItemGroup>
       <Folder Include="shared\domain\repositories\" />
-      <Folder Include="shared\infrastucture\interfaces\ASP\configuration\extensions\" />
-      <Folder Include="shared\infrastucture\persistence\EFC\configuration\extensions\" />
-      <Folder Include="shared\infrastucture\persistence\EFC\repositories\" />
+      <Folder Include="shared\infrastructure\persistence\EFC\configuration\extensions\" />
+      <Folder Include="shared\infrastructure\persistence\EFC\repositories\" />
     </ItemGroup>
 
 </Project>
