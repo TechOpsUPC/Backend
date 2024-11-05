@@ -34,7 +34,7 @@ public class UserController(
         return Ok(resource);
     }
     
-    public async Task<ActionResult> GetUserByUsernameAndPassword(string username, string password)
+    private async Task<ActionResult> GetUserByUsernameAndPassword(string username, string password)
     {
         var getUserByUsernameAndPasswordQuery = new GetUserByUsernameAndPasswordQuery(username, password);
         var result = await userQueryService.Handle(getUserByUsernameAndPasswordQuery);
