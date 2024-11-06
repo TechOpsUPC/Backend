@@ -1,4 +1,9 @@
 using Microsoft.EntityFrameworkCore;
+using zenflicks_backend.events.Application.Internal.CommandServices;
+using zenflicks_backend.events.Application.Internal.QueryServices;
+using zenflicks_backend.events.Domain.Repositories;
+using zenflicks_backend.events.Domain.Services;
+using zenflicks_backend.events.Infrastructure.Repositories;
 using zenflicks_backend.shared.domain.repositories;
 using zenflicks_backend.shared.infrastructure.interfaces.ASP.configuration;
 using zenflicks_backend.shared.infrastructure.persistence.EFC.configuration;
@@ -58,7 +63,10 @@ builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<IUserCommandService, UserCommandService>();
 builder.Services.AddScoped<IUserQueryService, UserQueryService>();
-
+//Event Services
+builder.Services.AddScoped<IEventRepository, EventRepository>();
+builder.Services.AddScoped<IEventCommandService, EventCommandService>();
+builder.Services.AddScoped<IEventQueryService, EventQueryService>();
 
 var app = builder.Build();
 
