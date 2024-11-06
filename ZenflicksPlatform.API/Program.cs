@@ -13,6 +13,10 @@ using zenflicks_backend.users.Application.Internal.QueryServices;
 using zenflicks_backend.users.Domain.Repositories;
 using zenflicks_backend.users.Domain.Services;
 using zenflicks_backend.users.Infrastructure.Repositories;
+using zenflicks_backend.content.Domain.Repositories;
+using zenflicks_backend.content.Infrastructure.Repositories;
+using zenflicks_backend.content.Domain.Services;
+using zenflicks_backend.content.Infrastructure.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -58,6 +62,7 @@ builder.Services.AddControllers(options =>
 // Shared Bounded Context Injection Configuration
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 
+
 // Bounded Context Injection Configuration (one for each bounded context)
 //Example:
 builder.Services.AddScoped<IUserRepository, UserRepository>();
@@ -68,6 +73,9 @@ builder.Services.AddScoped<IEventRepository, EventRepository>();
 builder.Services.AddScoped<IEventCommandService, EventCommandService>();
 builder.Services.AddScoped<IEventQueryService, EventQueryService>();
 
+builder.Services.AddScoped<IContentRepository, ContentRepository>();
+builder.Services.AddScoped<IContentCommandService, ContentCommandService>();
+builder.Services.AddScoped<IContentQueryService, ContentQueryService>();
 var app = builder.Build();
 
 // Verify Database Objects are created

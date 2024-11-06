@@ -3,11 +3,13 @@ using Microsoft.EntityFrameworkCore;
 using zenflicks_backend.events.Domain.Model.Aggregates;
 using zenflicks_backend.shared.infrastructure.persistence.EFC.configuration.extensions;
 using zenflicks_backend.users.Domain.Model.Aggregates;
+using zenflicks_backend.content.Domain.Model;
 
 namespace zenflicks_backend.shared.infrastructure.persistence.EFC.configuration;
 
 public class AppDbContext : DbContext
 {
+    public DbSet<Content> Contents { get; set; }
     public AppDbContext(DbContextOptions options) : base(options)
     {
     }
@@ -33,6 +35,16 @@ public class AppDbContext : DbContext
         builder.Entity<User>().Property(u => u.Password).IsRequired();
         builder.Entity<User>().Property(u => u.Membership).IsRequired();
 
+
+        builder.Entity<Content>().ToTable("Content");
+        builder.Entity<Content>().HasKey(u => u.Id);
+        builder.Entity<Content>().Property(u=> u.Id).IsRequired().ValueGeneratedOnAdd();
+        builder.Entity<Content>().Property(u => u.Title).IsRequired();
+        builder.Entity<Content>().Property(u => u.Description).IsRequired();
+        builder.Entity<Content>().Property(u => u.Director).IsRequired();
+        builder.Entity<Content>().Property(u => u.Duration).IsRequired();
+        builder.Entity<Content>().Property(u => u.Genre).IsRequired();
+
         builder.Entity<Event>().ToTable("Events");
         builder.Entity<Event>().HasKey(u => u.Id);
         builder.Entity<Event>().Property(u=>u.Id).IsRequired().ValueGeneratedOnAdd();
@@ -42,6 +54,7 @@ public class AppDbContext : DbContext
         builder.Entity<Event>().Property(u=>u.date).IsRequired();
         builder.Entity<Event>().Property(u=>u.creatorId).IsRequired();
         
+
         builder.UseSnakeCaseNamingConvention();
     }
 
