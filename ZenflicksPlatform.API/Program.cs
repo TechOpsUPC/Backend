@@ -58,16 +58,16 @@ builder.Services.AddControllers(options =>
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 
 
-builder.Services.AddScoped<IContentRepository, ContentRepository>();
-builder.Services.AddScoped<IContentCommandService, ContentCommandService>();
-builder.Services.AddScoped<IContentQueryService, ContentQueryService>();
-
 // Bounded Context Injection Configuration (one for each bounded context)
 //Example:
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<IUserCommandService, UserCommandService>();
 builder.Services.AddScoped<IUserQueryService, UserQueryService>();
 
+
+builder.Services.AddScoped<IContentRepository, ContentRepository>();
+builder.Services.AddScoped<IContentCommandService, ContentCommandService>();
+builder.Services.AddScoped<IContentQueryService, ContentQueryService>();
 var app = builder.Build();
 
 // Verify Database Objects are created
