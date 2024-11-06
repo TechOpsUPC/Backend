@@ -1,5 +1,6 @@
 ﻿using EntityFrameworkCore.CreatedUpdatedDate.Extensions;
 using Microsoft.EntityFrameworkCore;
+using zenflicks_backend.events.Domain.Model.Aggregates;
 using zenflicks_backend.shared.infrastructure.persistence.EFC.configuration.extensions;
 using zenflicks_backend.users.Domain.Model.Aggregates;
 
@@ -31,7 +32,18 @@ public class AppDbContext : DbContext
         builder.Entity<User>().Property(u => u.Email).IsRequired();
         builder.Entity<User>().Property(u => u.Password).IsRequired();
         builder.Entity<User>().Property(u => u.Membership).IsRequired();
+
+        builder.Entity<Event>().ToTable("Events");
+        builder.Entity<Event>().HasKey(u => u.Id);
+        builder.Entity<Event>().Property(u=>u.Id).IsRequired().ValueGeneratedOnAdd();
+        builder.Entity<Event>().Property(u => u.contentId).IsRequired();
+        builder.Entity<Event>().Property(u=>u.tittle).IsRequired();
+        builder.Entity<Event>().Property(u=> u.address).IsRequired();
+        builder.Entity<Event>().Property(u=>u.date).IsRequired();
+        builder.Entity<Event>().Property(u=>u.creatorId).IsRequired();
+        
         builder.UseSnakeCaseNamingConvention();
     }
+
     
 }
