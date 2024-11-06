@@ -1,6 +1,6 @@
 ﻿using zenflicks_backend.content.Domain.Model;
 using zenflicks_backend.content.Domain.Repositories;
-using zenflicks_backend.Infrastructure;  // Usar el espacio de nombres correcto
+using zenflicks_backend.shared.infrastructure.persistence.EFC.configuration; // Usar el espacio de nombres correcto
 
 namespace zenflicks_backend.content.Infrastructure.Repositories
 {
