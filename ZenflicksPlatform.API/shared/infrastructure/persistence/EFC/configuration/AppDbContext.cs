@@ -4,6 +4,7 @@ using zenflicks_backend.events.Domain.Model.Aggregates;
 using zenflicks_backend.shared.infrastructure.persistence.EFC.configuration.extensions;
 using zenflicks_backend.users.Domain.Model.Aggregates;
 using zenflicks_backend.content.Domain.Model;
+using zenflicks_backend.forums.Domain.Model.Aggregates;
 
 namespace zenflicks_backend.shared.infrastructure.persistence.EFC.configuration;
 
@@ -53,6 +54,15 @@ public class AppDbContext : DbContext
         builder.Entity<Event>().Property(u=> u.address).IsRequired();
         builder.Entity<Event>().Property(u=>u.date).IsRequired();
         builder.Entity<Event>().Property(u=>u.creatorId).IsRequired();
+
+        builder.Entity<Forum>().ToTable("Forums");
+        builder.Entity<Forum>().HasKey(f => f.Id);
+        builder.Entity<Forum>().Property(f => f.Id).IsRequired().ValueGeneratedOnAdd();
+        builder.Entity<Forum>().Property(f => f.Title).IsRequired();
+        builder.Entity<Forum>().Property(f => f.CommentBy).IsRequired();
+        builder.Entity<Forum>().Property(f => f.Comment).IsRequired();
+        builder.Entity<Forum>().Property(f => f.Image).IsRequired();
+        builder.Entity<Forum>().Property(f => f.Score).IsRequired();
         
 
         builder.UseSnakeCaseNamingConvention();

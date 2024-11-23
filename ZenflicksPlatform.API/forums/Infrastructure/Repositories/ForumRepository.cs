@@ -8,7 +8,7 @@ namespace zenflicks_backend.forums.Infrastructure.Repositories;
 
 public class ForumRepository : BaseRepository<Forum>, IForumRepository
 {
-    protected ForumRepository(AppDbContext context) : base(context)
+    public ForumRepository(AppDbContext context) : base(context)
     {
     }
 
