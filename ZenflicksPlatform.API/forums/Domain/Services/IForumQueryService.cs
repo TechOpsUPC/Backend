@@ -5,7 +5,7 @@ namespace zenflicks_backend.forums.Domain.Services;
 
 public interface IForumQueryService
 {
-    Task<Forum> Handle(GetForumByIdQuery query);
+    Task<Forum?> Handle(GetForumByIdQuery query);
     
     Task<IEnumerable<Forum>> Handle(GetAllForumsQuery query);
 }

@@ -17,9 +17,6 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="forums\Application\Internal\CommandServices\" />
-      <Folder Include="forums\Application\Internal\QueryServices\" />
-      <Folder Include="forums\Infrastructure\Repositories\" />
       <Folder Include="forums\Interfaces\REST\Resources\" />
       <Folder Include="forums\Interfaces\REST\Transform\" />
     </ItemGroup>

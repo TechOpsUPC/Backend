@@ -7,6 +7,6 @@ public interface IForumRepository : IBaseRepository<Forum>
 {
     Task<Forum?> FindByIdAsync(int id);
     
-    Task<IEnumerable<Forum>> GetAllAsync();
+    Task<Forum?> FindByTitleAsync(string name);
     
 }
