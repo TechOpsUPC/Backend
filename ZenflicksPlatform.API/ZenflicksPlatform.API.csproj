@@ -19,11 +19,6 @@
     <ItemGroup>
       <Folder Include="forums\Application\Internal\CommandServices\" />
       <Folder Include="forums\Application\Internal\QueryServices\" />
-      <Folder Include="forums\Domain\Model\Aggregates\" />
-      <Folder Include="forums\Domain\Model\Commands\" />
-      <Folder Include="forums\Domain\Model\Queries\" />
-      <Folder Include="forums\Domain\Repositories\" />
-      <Folder Include="forums\Domain\Services\" />
       <Folder Include="forums\Infrastructure\Repositories\" />
       <Folder Include="forums\Interfaces\REST\Resources\" />
       <Folder Include="forums\Interfaces\REST\Transform\" />
