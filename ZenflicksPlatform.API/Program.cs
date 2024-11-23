@@ -17,6 +17,11 @@ using zenflicks_backend.content.Domain.Repositories;
 using zenflicks_backend.content.Infrastructure.Repositories;
 using zenflicks_backend.content.Domain.Services;
 using zenflicks_backend.content.Infrastructure.Services;
+using zenflicks_backend.forums.Application.Internal.CommandServices;
+using zenflicks_backend.forums.Application.Internal.QueryServices;
+using zenflicks_backend.forums.Domain.Repositories;
+using zenflicks_backend.forums.Domain.Services;
+using zenflicks_backend.forums.Infrastructure.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -76,6 +81,12 @@ builder.Services.AddScoped<IEventQueryService, EventQueryService>();
 builder.Services.AddScoped<IContentRepository, ContentRepository>();
 builder.Services.AddScoped<IContentCommandService, ContentCommandService>();
 builder.Services.AddScoped<IContentQueryService, ContentQueryService>();
+
+builder.Services.AddScoped<IForumRepository, ForumRepository>();
+builder.Services.AddScoped<IForumCommandService, ForumCommandService>();
+builder.Services.AddScoped<IForumQueryService, ForumQueryService>();
+
+
 var app = builder.Build();
 
 // Verify Database Objects are created

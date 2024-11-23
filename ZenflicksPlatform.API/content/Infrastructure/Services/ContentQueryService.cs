@@ -20,7 +20,7 @@
                 Description = "Sample Description",
                 ReleaseDate = DateTime.Now,
                 Director = "Sample Director",
-                Duration = TimeSpan.FromMinutes(120)
+                Duration = "5.00"
             };
             return content;
         }
@@ -38,7 +38,7 @@
                     Description = "Action movie",
                     ReleaseDate = DateTime.Now,
                     Director = "Director 1",
-                    Duration = TimeSpan.FromMinutes(90)
+                    Duration = "5.00"
                 },
                 new Content
                 {
@@ -48,7 +48,7 @@
                     Description = "Comedy movie",
                     ReleaseDate = DateTime.Now,
                     Director = "Director 2",
-                    Duration = TimeSpan.FromMinutes(100)
+                    Duration = "5.00"
                 }
             };
 

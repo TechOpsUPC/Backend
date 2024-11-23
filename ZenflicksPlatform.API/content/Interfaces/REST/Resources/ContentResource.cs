@@ -8,6 +8,6 @@
         public string Description { get; set; }
         public DateTime ReleaseDate { get; set; }
         public string Director { get; set; }
-        public TimeSpan Duration { get; set; }
+        public string Duration { get; set; }
     }
 }
