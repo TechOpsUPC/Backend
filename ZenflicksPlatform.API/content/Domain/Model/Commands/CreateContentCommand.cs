@@ -7,9 +7,9 @@
         public string Description { get; private set; }
         public DateTime ReleaseDate { get; private set; }
         public string Director { get; private set; }
-        public TimeSpan Duration { get; private set; }
+        public string Duration { get; private set; }
 
-        public CreateContentCommand(string title, string genre, string description, DateTime releaseDate, string director, TimeSpan duration)
+        public CreateContentCommand(string title, string genre, string description, DateTime releaseDate, string director, string duration)
         {
             Title = title;
             Genre = genre;
